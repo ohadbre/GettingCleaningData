@@ -1,6 +1,6 @@
 library(reshape2)
 
-# Loading data from files. That could take some time... 
+# Loading data from files. This may take a while... 
 activity_labels<-read.table("activity_labels.txt", quote="")
 features<-read.table("features.txt", quote="")
 subject_test<-read.table("subject_test.txt", quote="",colClasses = "character")
@@ -28,7 +28,7 @@ ColsToKeep<-sort(c(1,2,grep("mean\\(\\)",features[,2])+2,grep("std\\(\\)",featur
 
 combined<-combined[,ColsToKeep]
 
-# Changing the names of the features to meaningfull ones
+# Changing the names of the features to meaningful ones
 names(combined)<-sub('tBody','TimeBody',names(combined))
 names(combined)<-sub('Acc','Acceleration',names(combined))
 names(combined)<-sub('tGravity','TimeGravity',names(combined))
