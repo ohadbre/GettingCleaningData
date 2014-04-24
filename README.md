@@ -9,28 +9,28 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 The database was downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip on April the 5th, 2014.
 
-This is a description of the different features of the full dataset, as mentioned on **features_info.txt**
+This is a description of the different features of the full dataset, as mentioned on **features_info.txt**:
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+"The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
 These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions."
 
+Only files that were directly placed in **train** and **data** folders were used for this assignment.
 
 As per the project instruction, I extracted only the measurements on the mean and standard deviation for each measurement, by keeping only features that contained std() or mean() in their names.
 
 In order to make the names of the the features more self-explanatory, after studying the meaning of the names (using the **features_info.txt**) I made the following substitutions in the names of the features:
 
-'tBody' became'TimeBody'
-'Acc' became'Acceleration'
-'tGravity' became 'TimeGravity'
-'fBody' became'FrequencySignalBody'
-'Mag' became'Magnitude'
-
+* 'tBody' became'TimeBody'
+* 'Acc' became'Acceleration'
+* 'tGravity' became 'TimeGravity'
+* 'fBody' became'FrequencySignalBody'
+* 'Mag' became'Magnitude'
 
 So here is the final list of the features in my dataset:
 
@@ -101,7 +101,7 @@ So here is the final list of the features in my dataset:
 * FrequencySignalBodyBodyGyroJerkMagnitude-mean()
 * FrequencySignalBodyBodyGyroJerkMagnitude-std()
 
-As the last step of the project, I aggregated the data for each subject and activity based on the average of each feature
+As the last step of the project, I aggregated the data for each subject and activity based on the average of each feature.
 
 
 
@@ -128,4 +128,4 @@ The following files should be placed at the same directory as this script:
 * leaves only features that contain mean() or std()
 * changes the names of the features to meaningful ones
 * aggregates the data for each subject and activity based on the average of each feature using **melt** and **dcast** commands
-* saved the tidy data to disk
+* saves the tidy data to disk
